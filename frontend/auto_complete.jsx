@@ -21,19 +21,35 @@ var AutoComplete = React.createClass({
     //update state of matches
     var newMatches = [];
     var newRegex = new RegExp("^" + newText);
-    this.props.dictionary.forEach( function(name){
-        if(newRegex.exec(name) !== null){
-          newMatches.push(name);
-        }
-      });
-      console.log(newMatches);
+    if(newText.length > 0 ) {
+      this.props.dictionary.forEach( function(name){
+          if(name.match(newRegex) !== null){
+            newMatches.push(name);
+          }
+        });
+    }
     this.setState({matches: newMatches});
+    // console.log(this.state.matches);
   },
+  onClick: function (e){
+    console.log(e);
+    this.setState({currText: e.target.textContent});
+    this.findMatches(e.target.textContent);
+  },
+
   render: function(){
     //will be called if state changes
     return(
-      <input type='text' value={this.state.currText}
-      onChange={this.keyPress}></input>
+      <div>
+        <input type='text' value={this.state.currText}
+        onChange={this.keyPress}></input>
+        <ul onClick={this.onClick}>{
+            this.state.matches.map( function(name) {
+              return <li key={name}>{name}</li>;
+              })
+            }
+        </ul>
+      </div>
     );
   }
 });
