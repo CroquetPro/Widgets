@@ -5,9 +5,9 @@ module.exports = {
   entry: "./frontend/widget.jsx",
   output: {
     path: "./",
-    filename: "bundle.js",
-    devtoolModuleFilenameTemplate: '[resourcePath]',
-    devtoolFallbackModuleFilenameTemplate: '[resourcePath]?[hash]'
+    filename: "bundle.js"
+    // devtoolModuleFilenameTemplate: '[resourcePath]',
+    // devtoolFallbackModuleFilenameTemplate: '[resourcePath]?[hash]'
   },
   module: {
     loaders: [
