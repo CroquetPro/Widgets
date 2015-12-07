@@ -1,6 +1,8 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var AutoComplete = require('./auto_complete');
+var React = require('react'),
+  ReactDOM = require('react-dom'),
+  AutoComplete = require('./auto_complete'),
+  WeatherClock = require('./weather_clock');
+
 
 var NAMES = ['Annmarie',
                 'Allan',
@@ -63,6 +65,7 @@ var Widgets = React.createClass({
     return(
       <div>
         <AutoComplete dictionary={NAMES}/>
+        <WeatherClock />
       </div>
     );
   }

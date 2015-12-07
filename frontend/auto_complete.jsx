@@ -1,6 +1,5 @@
 
 var React = require('react');
-var Input = require('./input');
 
 var AutoComplete = React.createClass({
   getInitialState: function() {
