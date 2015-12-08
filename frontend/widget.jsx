@@ -1,7 +1,8 @@
 var React = require('react'),
   ReactDOM = require('react-dom'),
   AutoComplete = require('./auto_complete'),
-  WeatherClock = require('./weather_clock');
+  WeatherClock = require('./weather_clock'),
+  Tabs = require('./tabs');
 
 
 var NAMES = ['Annmarie',
@@ -60,12 +61,23 @@ var NAMES = ['Annmarie',
                 'Melany',
 ];
 
+var TABARRAY = [{title: 'First', content: 'first content'},
+                {title: 'Second', content: '2nd content'},
+                {title: 'Third', content: 'third content'},
+                {title: 'Fourth', content: '4th content'},
+                {title: 'Fifth', content: 'fifth content'},
+                {title: 'Sixth', content: '6th content'},
+                {title: 'Seventh', content: 'seventh content'},
+                {title: 'Eighth', content: '8th content'},
+];
+
 var Widgets = React.createClass({
   render: function () {
     return(
       <div>
         <AutoComplete dictionary={NAMES}/>
         <WeatherClock />
+        <Tabs items={TABARRAY}/>
       </div>
     );
   }
